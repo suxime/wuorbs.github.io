@@ -1,0 +1,1004 @@
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+}
+
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    background-color: #3b4354;
+    overflow: auto;
+    cursor: url(/img/cursor.png), auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+.rpg-aggregate {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+}
+
+.rpg-aggregate-body-bg {
+    background-size: 1920px 420px;
+}
+
+.menu-fold {
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+    height: calc(100% - 56px);
+    left: calc(50% - 540px);
+    position: fixed;
+    top: 56px;
+    width: 238px;
+    z-index: 1;
+}
+
+.menu-fold.rpg {
+    background: linear-gradient(180deg, #292d34, rgba(41, 45, 52, 0) 51.9%);
+    padding: 0 5px;
+}
+
+.menu-fold-container {
+    height: 100%;
+    position: relative;
+}
+
+.menu-fold-title {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    color: hsla(0, 0%, 100%, .52);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 22px;
+    font-weight: 700;
+    height: 64px;
+    line-height: 28px;
+    padding: 0 18px;
+    width: 100%;
+}
+
+.menu-fold-title.rpg {
+    background: url(/img/menu-fold-title.png) no-repeat 50%/contain;
+}
+
+.menu-fold-title-content {
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: auto;
+    font-weight: 700;
+}
+
+.menu-fold-items {
+    height: calc(100% - 64px);
+    overflow: hidden;
+}
+
+.menu-fold-item-l1-name {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    color: hsla(0, 0%, 100%, .45);
+    cursor: pointer;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 14px;
+    font-weight: 500;
+    height: 56px;
+    line-height: 20px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.menu-fold-item-l1-name.rpg {
+    background: url(/img/menu-fold-item-l1.png) no-repeat 50%/contain;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding-left: 16px;
+    padding-right: 8px;
+}
+
+.menu-fold-item-l1-name.rpg.selected {
+    background: url(/img/menu-fold-item-l1-active.png) no-repeat 50%/contain;
+    color: hsla(0, 0%, 100%, .85);
+}
+
+.menu-fold-item-ic {
+    height: 20px;
+    margin-right: 4px;
+    width: 20px;
+}
+
+.menu-fold-item-l1-name-content {
+    margin-right: auto;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: auto;
+}
+
+.rpg-aggregate-page {
+    margin-left: 258px;
+    margin-top: 55px;
+    padding-top: 20px;
+    width: 640px;
+}
+
+.rpg-aggregate-page-title {
+
+    color: #afeeee;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 42px;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: auto;
+}
+
+.rpg-aggregate-page-title.index {
+    background-image: url(/img/index-title.png);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: fit-content;
+    width: -moz-fit-content;
+    padding-bottom: 16px;
+}
+
+.rpg-aggregate-page-split {
+    background-image: url(/img/split-left.png), url(/img/split-right.png);
+    background-position: 0, 100%;
+    background-repeat: no-repeat;
+    background-size: 16px 7px;
+    height: 7px;
+    margin: 8px 0 20px;
+    position: relative;
+    width: 100%;
+}
+
+.rpg-aggregate-page-split:after {
+    background-color: hsla(0, 0%, 100%, .1);
+    bottom: 3px;
+    content: "";
+    height: 1px;
+    left: 16px;
+    position: absolute;
+    width: calc(100% - 32px);
+}
+
+.rpg-show-character-wrapper, .rpg-show-equipment-wrapper, .rpg-show-relic-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.rpg-show-relic-item {
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.rpg-show-relic-item:nth-child(odd) {
+    margin-left: 4px;
+    margin-right: 20px;
+}
+
+.rpg-show-relic-item a {
+    display: block;
+}
+
+.card {
+    margin-right: 20px;
+    margin-bottom: 16px;
+    display: block;
+    position: relative;
+    width: 140px;
+}
+
+.card-icon {
+    width: 100%;
+    height: 234px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+
+.card-name {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 16px;
+    color: rgba(255, 255, 255, 0.85);
+    position: absolute;
+    bottom: 33px;
+    width: 100%;
+    text-align: center;
+    padding: 0 6px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.relic-card {
+    position: relative;
+    background-color: #292d34;
+    background-image: linear-gradient(89.55deg, #292d34 .43%, rgba(41, 45, 52, 0) 99.65%);;
+    height: 182px;
+    width: 300px;
+}
+
+.relic-card:after {
+    content: "";
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    height: 165px;
+    width: 284px;
+    background-image: url(/img/relic-background.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.relic-card-bg {
+    position: absolute;
+    height: 62px;
+    right: 6px;
+    top: 9px;
+    width: 70px;
+}
+
+.relic-card-main {
+    position: absolute;
+    left: 16px;
+    top: 17px;
+}
+
+.drop-icon {
+    overflow: hidden;
+    position: relative;
+    height: 88px;
+    width: 88px;
+}
+
+.drop-icon-img {
+    height: 100%;
+    left: 50%;
+    top: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.drop-icon-img img {
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.relic-card-name {
+    color: #afeeee;
+    overflow: hidden;
+    position: absolute;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 14px;
+    left: 116px;
+    line-height: 20px;
+    max-width: 248px;
+    top: 20px;
+    z-index: 1;
+}
+
+.relic-card-other {
+    font-size: 12px;
+    left: 116px;
+    line-height: 16px;
+    top: 44px;
+    color: #7f838c;
+    font-weight: 400;
+    position: absolute;
+}
+
+.relic-card-suit {
+    left: 116px;
+    top: 64px;
+    display: -ms-flexbox;
+    display: flex;
+    position: absolute;
+}
+
+.relic-card-suit .drop-icon {
+    height: 36px;
+    width: 36px;
+}
+
+.relic-card-line {
+    background-image: url(/img/split-left.png), url(/img/split-right.png);
+    background-position: 0, 100%;
+    background-repeat: no-repeat;
+    background-size: 16px 7px;
+    height: 7px;
+    position: relative;
+    top: 113px;
+    width: 268px;
+    left: 50%;
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+.relic-card-line:after {
+    background-color: hsla(0, 0%, 100%, .1);
+    bottom: 3px;
+    content: "";
+    height: 1px;
+    left: 16px;
+    position: absolute;
+    width: calc(100% - 32px);
+}
+
+.relic-card-desc {
+    height: 36px;
+    left: 16px;
+    top: 130px;
+    -webkit-box-direction: normal;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    z-index: 1;
+}
+
+.relic-card-desc-item {
+    height: 16px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.relic-card-desc-num {
+    border: 1px solid hsla(0, 0%, 100%, .08);
+    border-radius: 0 6px;
+    font-size: 12px;
+    height: 16px;
+    line-height: 16px;
+    width: 15px;
+    color: #afeeee;
+    font-weight: 400;
+    position: relative;
+    text-align: center;
+}
+
+.relic-card-desc-detail {
+    font-size: 12px;
+    left: 25px;
+    line-height: 16px;
+    width: 239px;
+    color: #aaadb3;
+    font-weight: 400;
+    overflow: hidden;
+    position: absolute;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@-webkit-keyframes aggregateCardHover {
+    0% {
+        background: hsla(0, 0%, 100%, .1)
+    }
+
+    50% {
+        background: hsla(0, 0%, 100%, .4)
+    }
+
+    to {
+        background: hsla(0, 0%, 100%, .1)
+    }
+}
+
+@keyframes aggregateCardHover {
+    0% {
+        background: hsla(0, 0%, 100%, .1)
+    }
+
+    50% {
+        background: hsla(0, 0%, 100%, .4)
+    }
+
+    to {
+        background: hsla(0, 0%, 100%, .1)
+    }
+}
+
+@-webkit-keyframes cardScale {
+    0% {
+        transform: scale(1)
+    }
+
+    50% {
+        transform: scale(1.08)
+    }
+
+    to {
+        transform: scale(1)
+    }
+}
+
+@keyframes cardScale {
+    0% {
+        transform: scale(1)
+    }
+
+    50% {
+        transform: scale(1.08)
+    }
+
+    to {
+        transform: scale(1)
+    }
+}
+
+.global-footer {
+    width: 100%;
+}
+
+.global-footer.pc {
+    background: rgba(0, 0, 0, .45);
+    color: hsla(0, 0%, 100%, .25);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    margin-top: 100px;
+    padding: 28px;
+}
+
+.global-footer.pc-narrow {
+    background-color: rgba(0, 0, 0, 0);
+    margin-bottom: 66px;
+    padding: 0;
+}
+
+.global-footer.pc .global-footer-wrapper {
+    margin: 0 auto;
+    max-width: 100%;
+    width: 1188px;
+}
+
+.global-footer-bottom {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-top: .16rem;
+}
+
+.global-footer.pc .global-footer-bottom {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin-top: 8px;
+}
+
+.global-footer.pc-narrow .global-footer-bottom {
+    margin-top: 24px;
+}
+
+.global-footer.pc .global-footer-bottom-part {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.global-footer.pc-narrow .global-footer-bottom-part {
+    display: block;
+    padding-right: 41px;
+    position: relative;
+    width: 100%;
+}
+
+.global-footer-links {
+    list-style: none;
+}
+
+.global-footer.pc .global-footer-links {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    white-space: nowrap;
+    color: hsla(0, 0%, 100%, .25);
+}
+
+.global-footer.pc .global-footer-links li:not(:last-child):after {
+    content: "|";
+    margin: 0 10px;
+}
+
+.global-footer.pc .global-footer-copyright {
+    align-self: flex-end;
+    flex-shrink: 0;
+}
+
+.global-footer.pc-narrow .global-footer-copyright {
+    margin-top: 12px;
+}
+
+.rpg-entry-page {
+    margin: 0 auto;
+    max-width: 1188px;
+    min-height: calc(100vh - 266px);
+    position: relative;
+}
+
+.rpg-entry-page-tools {
+    -ms-flex-align: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: space-between;
+    padding: 46px 0 32px;
+    position: relative;
+    z-index: 1;
+}
+
+.bread-crumb {
+    overflow: hidden;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.bread-crumb-item {
+    color: hsla(0, 0%, 100%, .65);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-shrink: 0;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    overflow: hidden;
+}
+
+.bread-crumb-item:last-child {
+    color: hsla(0, 0%, 100%, .25);
+    flex-shrink: 1;
+}
+
+.bread-crumb-item:not(:last-child):hover span {
+    text-decoration: underline
+}
+
+.bread-crumb i {
+    font-style: normal;
+    margin: 0 3px;
+}
+
+.bread-crumb span {
+    cursor: pointer;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.bread-crumb-item:last-child span {
+    cursor: auto;
+}
+
+.rpg-entry-child-page {
+    width: 1188px;
+}
+
+.detail-header-common {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 48px;
+}
+
+.detail-header-common-icon {
+    border-radius: 16px 16px 48px 16px;
+    height: 200px;
+    width: 200px;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.detail-header-common-icon img {
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    width: 100%;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.detail-header-common-right {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin-left: 24px;
+}
+
+.detail-header-common-name {
+    color: hsla(0, 0%, 100%, .85);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 42px;
+    margin-bottom: 4px;
+}
+
+.detail-header-common-name > span {
+    margin-right: 4px;
+}
+
+.detail-header-common-tag {
+    margin-top: 20px;
+}
+
+.c-detail-header-tag {
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    -webkit-transition: height .25s ease-out;
+    -o-transition: height .25s ease-out;
+    transition: height .25s ease-out;
+    width: 588px;
+}
+
+.c-detail-header-tag-inner {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    width: 588px;
+}
+
+.c-entry-tag-item {
+    white-space: nowrap;
+    background: rgba(0, 0, 0, .45);
+    font-size: 12px;
+    height: 24px;
+    line-height: 24px;
+    margin-bottom: 8px;
+    padding: 0 8px;
+    position: relative;
+    border-radius: 0 12px 0 0;
+    color: #afeeee;
+}
+
+.c-entry-tag-item:last-child {
+    margin-right: 0;
+}
+
+.rpg-entry-child-page-module {
+    margin-bottom: 20px;
+}
+
+.entry-common-module {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    align-items: center;
+    background: #292d34;
+    border-radius: 16px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+}
+
+.entry-common-module-title {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    align-items: center;
+    color: hsla(0, 0%, 100%, .85);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 22px;
+    font-weight: 700;
+    height: 64px;
+    justify-content: space-between;
+    line-height: 64px;
+    position: relative;
+    width: 1140px;
+}
+
+.entry-common-module-line {
+    background-image: url(/img/split-left.png), url(/img/split-right.png);
+    background-position: 0, 100%;
+    background-repeat: no-repeat;
+    background-size: 16px 7px;
+    height: 7px;
+    margin: 0 auto;
+    position: relative;
+    width: calc(100% - 48px);
+}
+
+.entry-common-module-line:after {
+    background-color: hsla(0, 0%, 100%, .1);
+    bottom: 3px;
+    content: "";
+    height: 1px;
+    left: 16px;
+    position: absolute;
+    width: calc(100% - 32px);
+}
+
+.base-info-content {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    width: 1140px;
+}
+
+.base-info-content, .base-info-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.base-info-item {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border-bottom: 1px solid hsla(0, 0%, 100%, .02);
+    min-height: 44px;
+    min-width: 564px;
+    position: relative;
+    white-space: nowrap;
+}
+
+.base-info-item:last-child, .base-info-item:nth-last-child(2) {
+    border-bottom: none;
+}
+
+.base-info-item-key {
+    color: hsla(0, 0%, 100%, .25);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+    min-width: 144px;
+    text-align: left;
+    white-space: normal;
+    width: 144px;
+    word-break: break-word;
+}
+
+.base-info-item-value {
+    color: hsla(0, 0%, 100%, .85);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    margin-left: 12px;
+    min-width: 408px;
+    padding: 12px 0;
+    text-align: left;
+    white-space: normal;
+    word-break: break-word;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+}
+
+.et-text-tiptap {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.et-text-tiptap .ProseMirror {
+    caret-color: #556ad0;
+    font-size: 14px;
+    line-height: 20px;
+    outline: none;
+    overflow: auto;
+}
+
+.relic-list {
+    margin-top: 24px;
+    overflow: hidden;
+    -webkit-transition: height .35s ease-out;
+    -o-transition: height .35s ease-out;
+    transition: height .35s ease-out;
+    width: 100%;
+}
+
+.relic-list-item {
+    border-bottom: 1px solid hsla(0, 0%, 100%, .02);
+    margin-bottom: 32px;
+    padding: 0 24px;
+    position: relative;
+    width: 100%;
+}
+
+.relic-list-item-top {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.relic-list-item-top img {
+    flex-shrink: 0;
+    overflow: hidden;
+    position: relative;
+    border-radius: 6px 6px 18px 6px;
+    height: 48px;
+    width: 48px;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+.relic-list-item-title {
+    color: #fff;
+    font-size: 18px;
+    line-height: 26px;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    font-weight: 400;
+    margin-left: 10px;
+    overflow: hidden;
+    width: 298px;
+}
+
+.relic-list-item-desc {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    margin: 8px 0 0;
+}
+
+.relic-list-item-desc p {
+    color: hsla(0, 0%, 100%, .45);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.story-list-item {
+    position: relative;
+    padding: 0 24px;
+}
+
+.story-list-item:not(:last-child):after {
+    background: hsla(0, 0%, 100%, .08);
+    content: "";
+    display: block;
+    height: 1px;
+    margin: 0 auto 16px;
+    width: 100%;
+}
+
+.story-list-item:first-child {
+    margin-top: 24px;
+}
+
+.story-list-item:last-child {
+    padding-bottom: 40px;
+}
+
+.story-list-item-top {
+    -ms-flex-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 8px;
+}
+
+.story-list-item-title {
+    color: hsla(0, 0%, 100%, .85);
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 26px;
+    margin-bottom: 0;
+}
+
+.story-list-item-desc {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    margin-bottom: 16px;
+    white-space: normal;
+}
+
+.story-list-item-desc .ProseMirror {
+    color: hsla(0, 0%, 100%, .45);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+}
