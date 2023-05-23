@@ -1124,6 +1124,7 @@ a {
     overflow: hidden;
     position: relative;
     width: 1140px !important;
+    flex-wrap: wrap;
 }
 
 .ascension-tb {
@@ -1179,7 +1180,7 @@ a {
     border-right: none;
 }
 
-.ascension-tr:first-child td:last-child {
+.ascension-tr:not(.character):first-child td:last-child {
     min-width: 400px;
 }
 
@@ -1252,4 +1253,199 @@ a {
     color: #fff;
     font-weight: bold;
     text-shadow: 0 0 2px rgba(0, 0, 0, 0.8);
+}
+
+.detail-header-cover {
+    margin-bottom: 220px;
+    position: relative;
+}
+
+.detail-header-cover-img {
+    height: 640px;
+    position: absolute;
+    top: -160px;
+    width: 100%;
+    z-index: 0;
+}
+
+.detail-header-cover-img img {
+    width: 100%;
+    border-radius: .5rem;
+}
+
+.detail-header-cover-top {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-left: 50px;
+    margin-top: 150px;
+}
+
+.detail-header-cover-top-right {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    height: 64px;
+    justify-content: center;
+    margin-left: 12px;
+}
+
+.detail-header-cover-name {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    color: #000;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 42px;
+    margin-bottom: 4px;
+    max-width: 510px;
+    position: relative;
+    white-space: normal;
+    word-break: break-word;
+}
+
+.detail-header-cover-name > span {
+    max-width: fit-content;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: 700;
+}
+
+.detail-header-cover-name-element {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin-left: 4px;
+    position: relative;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.detail-header-cover-name-element img {
+    height: 24px;
+    width: 24px;
+}
+
+.detail-header-cover-level {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.detail-header-cover-level img {
+    height: 16px;
+    width: 16px;
+    margin-right: 4px;
+    z-index: 1;
+}
+
+.detail-header-common-tag.cover {
+    margin-left: 74px;
+    margin-top: 15px;
+}
+
+.detail-header-common-desc.cover {
+    margin-left: 74px;
+    color: #333333;
+}
+
+.ascension-item-info {
+    padding: 14px;
+    color: hsla(0, 0%, 100%, .65);
+}
+
+.ascension-info.character > div {
+    height: 151px;
+}
+
+.describe-text-list {
+    margin: 24px 0 64px;
+    overflow: hidden;
+    position: relative;
+    -webkit-transition: height .35s ease-out;
+    -o-transition: height .35s ease-out;
+    transition: height .35s ease-out;
+    width: 100%;
+}
+
+.describe-text-item {
+    border-bottom: 1px solid hsla(0, 0%, 100%, .02);
+    margin-top: 32px;
+    padding: 0 24px;
+    position: relative;
+    width: 100%;
+}
+
+.describe-text-item:first-child {
+    margin-top: 0;
+}
+
+.describe-text-item-top {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.describe-text-item-img {
+    border-radius: 8px;
+    height: 48px;
+    width: 48px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-shrink: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.describe-text-item-img img {
+    height: 100%;
+    width: 100%;
+}
+
+.describe-text-item-name {
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    color: hsla(0, 0%, 100%, .85);
+    display: -webkit-box;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 26px;
+    margin-left: 10px;
+    overflow: hidden;
+    width: 800px;
+}
+
+.describe-text-item-desc {
+    color: hsla(0, 0%, 100%, .45);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    margin: 8px 0 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
 }
